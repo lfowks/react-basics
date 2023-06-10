@@ -1,9 +1,6 @@
-import { useContext } from "react";
-import CounterContext from "../main";
 
 const Counter2 = (props) => {
 
-  const counterFromContext = useContext(CounterContext);
 
   const {number, aumentar} = props;
 

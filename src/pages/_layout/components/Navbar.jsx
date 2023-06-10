@@ -8,6 +8,9 @@ const Navbar = () => {
                 to="home">Home</NavLink >
             <NavLink
                 className='link parent-item capitalize nav-link'
+                to="login">Login</NavLink >
+            <NavLink
+                className='link parent-item capitalize nav-link'
                 to="about">About</NavLink >
             <NavLink
                 className='link parent-item capitalize nav-link'
@@ -21,6 +24,9 @@ const Navbar = () => {
             <NavLink
                 className='link parent-item capitalize nav-link'
                 to="debounce">Debounce Time</NavLink >
+            <NavLink
+                className='link parent-item capitalize nav-link'
+                to="suggestions">Suggestions</NavLink >
         </nav>
     )
 }
