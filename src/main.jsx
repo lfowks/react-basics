@@ -16,8 +16,7 @@ import Suggestions from './components/Suggestions'
 import Login from './pages/login/Login'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
-    <React.StrictMode>    
+     
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -31,8 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/suggestions" element={<Suggestions />} />
         </Route>
       </Routes>
-      </BrowserRouter>    
-  </React.StrictMode>
+      </BrowserRouter>  
 )
 
 // export default CounterContext;
