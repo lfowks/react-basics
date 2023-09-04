@@ -27,6 +27,15 @@ const Navbar = () => {
             <NavLink
                 className='link parent-item capitalize nav-link'
                 to="suggestions">Suggestions</NavLink >
+             <NavLink
+                className='link parent-item capitalize nav-link'
+                to="keywords">Add Keywords</NavLink >
+            <NavLink
+                className='link parent-item capitalize nav-link'
+                to="articles">Add Articles</NavLink >
+            <NavLink
+                className='link parent-item capitalize nav-link'
+                to="filterarticles">Filter Articles</NavLink >
         </nav>
     )
 }

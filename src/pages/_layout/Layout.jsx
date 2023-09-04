@@ -4,20 +4,26 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 export const Layout = () => {
-    const queryClient = new QueryClient()
+
+    const queryConfig = {
+        suspense: true,
+        staleTime: 5 * 60 * 1000
+      };
+
+    const queryClient = new QueryClient({suspense: true})
     return (
         <>
 
             <Navbar />
 
             <main>
-                <QueryClientProvider client={queryClient}>
+                <QueryClientProvider client={queryClient} config={queryConfig}>
                     <Outlet />
                     <ReactQueryDevtools />
                 </QueryClientProvider>
             </main>
 
-            <h1>footer</h1>
+            {/* <h1>footer</h1> */}
         </>
     )
 }

@@ -1,3 +1,6 @@
+#root {
+ width: 100%;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,8 +34,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  min-width: 620px;
+  height: 100vh;
 }
 
 h1 {
@@ -74,10 +77,10 @@ button:focus-visible {
 
 .navbar{
   display: flex;
-  gap:16px;
+  gap:32px;
   padding-bottom: 5%;
-  border: 1px solid whitesmoke;
-  border-radius: 8px;
+  border-bottom: 1px solid whitesmoke;
+  margin-bottom: 16px;
 }
 .list-offers{
   padding-top: 5%;
@@ -129,4 +132,64 @@ button:focus-visible {
   border: 2px solid whitesmoke;
   padding: 3%;
   width: 50%;
+}
+
+.keywords{
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.articles{
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.filteredArticles{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+}
+
+.filters-result{
+  display: flex;
+}
+
+.keyword-link{
+  cursor: pointer;
+}
+
+.nav-link.active{
+  /* color:#ff9000; */
+  transform: scale(1.2);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #646cff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.resultArticles{
+  width: 50%;
+  overflow-y: scroll;
+  max-height: 70vh;
 }

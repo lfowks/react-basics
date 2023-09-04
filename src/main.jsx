@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Layout } from './pages/_layout/Layout'
@@ -12,8 +11,10 @@ import Menu from './components/Menu'
 // const CounterContext = React.createContext(0);
 import categories from '../src/utils/json/categories.json'
 import DebounceTime from './components/DebounceTime'
-import Suggestions from './components/Suggestions'
 import Login from './pages/login/Login'
+import Articles from './pages/exam/Articles'
+import Suggestions from './pages/exam/Suggestions'
+import FilteredArticles from './pages/exam/FilteredArticles'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
      
@@ -27,7 +28,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/offers" element={<ListOffers />} />
           <Route path="/menu" element={<Menu data={categories} />} />
           <Route path="/debounce" element={<DebounceTime />} />
-          <Route path="/suggestions" element={<Suggestions />} />
+          {/* <Route path="/suggestions" element={<Suggestions />} /> */}
+          <Route path="/keywords" element={<Suggestions />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/filterarticles" element={<FilteredArticles />} />
         </Route>
       </Routes>
       </BrowserRouter>  
