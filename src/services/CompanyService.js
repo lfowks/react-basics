@@ -5,7 +5,6 @@ export const getCompanies = async () => {
     return data;
 };
 
-
 export const create = async (company) => { 
     let data = await api.post('companies',company).then(result => result.data);
     return data;

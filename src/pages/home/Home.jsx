@@ -6,6 +6,8 @@ const Home = () => {
   const [connection, setConnection] = useState(null);
   const [inputText, setInputText] = useState("");
 
+  const [titulo, setTitulo] = useState("");
+
   useEffect(() => {
     const connect = new HubConnectionBuilder()
       .withUrl("https://localhost:7185/notifications")
@@ -22,7 +24,7 @@ const Home = () => {
         .then(() => {
           
           connection.on("MyChannel", (message) => {
-           console.log(message);
+           setTitulo(message);
           });
 
           connection.on("SendToAll", (message) => {
@@ -30,12 +32,7 @@ const Home = () => {
           });
         })
         .catch((error) => console.log(error));
-
-        
     }
-
-   
-
   }, [connection]);
 
   const sendMessage = async () => {
@@ -54,6 +51,10 @@ const Home = () => {
       <button onClick={sendMessage} type="primary">
         Send
       </button>
+
+      <div>
+        {titulo}
+      </div>
     </>
   );
 };
