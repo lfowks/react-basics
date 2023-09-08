@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [connection, setConnection] = useState(null);
   const [inputText, setInputText] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const connect = new HubConnectionBuilder()
@@ -22,7 +23,7 @@ const Home = () => {
         .then(() => {
           
           connection.on("MyChannel", (message) => {
-           console.log(message);
+           setTitle(message);
           });
 
           connection.on("SendToAll", (message) => {
@@ -54,6 +55,9 @@ const Home = () => {
       <button onClick={sendMessage} type="primary">
         Send
       </button>
+      <div>
+        {title}
+      </div>
     </>
   );
 };
