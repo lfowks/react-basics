@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [connection, setConnection] = useState(null);
   const [inputText, setInputText] = useState("");
+  const [title, setTitle] = useState("");
 
   const [user, setUser] = useState({});
 
@@ -23,8 +24,13 @@ const Home = () => {
         .start()
         .then(() => {
           
+<<<<<<< HEAD
           connection.on("MyChannel", (user) => {
            setUser(user);
+=======
+          connection.on("MyChannel", (message) => {
+           setTitle(message);
+>>>>>>> b8baf82e4753f0e3a1495efc95bfa6326975e7d4
           });
 
           connection.on("SendToAll", (message) => {
