@@ -6,7 +6,7 @@ const Home = () => {
   const [connection, setConnection] = useState(null);
   const [inputText, setInputText] = useState("");
 
-  const [titulo, setTitulo] = useState("");
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     const connect = new HubConnectionBuilder()
@@ -23,8 +23,8 @@ const Home = () => {
         .start()
         .then(() => {
           
-          connection.on("MyChannel", (message) => {
-           setTitulo(message);
+          connection.on("MyChannel", (user) => {
+           setUser(user);
           });
 
           connection.on("SendToAll", (message) => {
@@ -53,7 +53,8 @@ const Home = () => {
       </button>
 
       <div>
-        {titulo}
+        <h1>{user.id}</h1>
+        {user.name} - {user.email}
       </div>
     </>
   );
