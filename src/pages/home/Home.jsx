@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [connection, setConnection] = useState(null);
   const [inputText, setInputText] = useState("");
-  const [title, setTitle] = useState("");
-
   const [user, setUser] = useState({});
 
   useEffect(() => {
